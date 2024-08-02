@@ -740,7 +740,7 @@ a {
     max-width: 700px !important; /* Define uma largura máxima para garantir que a div não fique muito larga */
     min-width: 300px !important; /* Define uma largura mínima se necessário */
 	 height: auto; /* Ajusta a altura para se ajustar ao conteúdo */
-            max-height: 780px !important; /* Define uma altura máxima */
+            max-height: 720px !important; /* Define uma altura máxima */
             min-height: 200px !important; /* Define uma altura mínima */
             overflow-y: auto; /
   }
