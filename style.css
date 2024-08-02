@@ -736,13 +736,23 @@ a {
   }
   
    .conversation {
-    width: 100% !important; /* Ajuste a largura percentual conforme necessário */
-    max-width: 700px !important; /* Define uma largura máxima para garantir que a div não fique muito larga */
+    width: 140% !important; /* Ajuste a largura percentual conforme necessário */
+    max-width: 1000px !important; /* Define uma largura máxima para garantir que a div não fique muito larga */
     min-width: 300px !important; /* Define uma largura mínima se necessário */
 	 height: auto; /* Ajusta a altura para se ajustar ao conteúdo */
             max-height: 720px !important; /* Define uma altura máxima */
             min-height: 200px !important; /* Define uma altura mínima */
             overflow-y: auto; /
+  }
+  
+  .convemessages{
+  width: 125% !important; /* Ajuste a largura percentual conforme necessário */
+    max-width: 900px !important; /* Define uma largura máxima para garantir que a div não fique muito larga */
+    min-width: 300px !important; /* Define uma largura mínima se necessário */
+	 padding: 0; /* Remove o espaçamento interno */
+    gap: 1rem;
+	  box-sizing: border-box; 
+	   left: -50px;
   }
 
 }
