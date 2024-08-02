@@ -730,6 +730,27 @@ a {
     visibility: visible;
 }
 
+@media (max-width: 768px) {
+  .contacts {
+    display: none;
+  }
+  
+   .conversation {
+    width: 100% !important; /* Ajuste a largura percentual conforme necessário */
+    max-width: 700px !important; /* Define uma largura máxima para garantir que a div não fique muito larga */
+    min-width: 300px !important; /* Define uma largura mínima se necessário */
+  }
+
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
 @media (max-width:1441px) {
     .container {
         padding: 0;
