@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./img/icons8-whatsapp-48.png">
+    
+    <style>
+        /* Adicione o estilo básico para a área de mensagens */
+        .senderContainer, .receiverContainer {
+            margin-bottom: 10px;
+        }
+        .sender, .receiver {
+            padding: 10px;
+            border-radius: 10px;
+            background: #e5ddd5;
+        }
+        .receiver {
+            background: #dcf8c6;
+        }
+        .time {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="whatsapp">
+            <div class="contacts">
+                <!-- Restante do código para a seção de contatos -->
+            </div>
+            <div class="conversation">
+                <div class="convenav navs">
+                    <div class="conveuser">
+                        <div class="profile">
+                            <img src="./img/tumblr_ovlq7qnBBR1uebi0uo1_1280.jpg" alt="">
+                        </div>
+                        <div class="profileInformation">
+                            <h4>Ihsan</h4>
+                            <p>en ligne hier à 10:56 AM</p>
+                        </div>
+                    </div>
+                    <div class="tools">
+                        <div class="tool">
+                            <img src="./img/icons8-search-64.png" alt="">
+                        </div>
+                        <div class="tool">
+                            <img src="./img/icons8-menu-vertical-50.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="convemessages" id="messageContainer">
+                    <!-- Mensagens já existentes aqui -->
+                </div>
+                <div class="convebottom">
+                    <div class="tools">
+                        <div class="tool">
+                            <img src="./img/icons8-smiling-90.png" alt="">
+                        </div>
+                        <div class="tool">
+                            <img src="./img/icons8-attach-100.png" alt="">
+                        </div>
+                    </div>
+                    <input type="text" id="messageInput" placeholder="Taper un message">
+                    <div class="tool">
+                        <img src="./img/icons8-microphone-96.png" alt="" id="sendMessage">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            const messageInput = document.getElementById('messageInput');
+            const messageText = messageInput.value.trim();
+            
+            if (messageText === '') {
+                return; // Não envia mensagens vazias
+            }
+            
+            const messageContainer = document.getElementById('messageContainer');
+            
+            // Cria uma nova mensagem de remetente
+            const senderMessage = document.createElement('div');
+            senderMessage.className = 'senderContainer arrowm';
+            senderMessage.innerHTML = `
+                <div class="sender mepop">
+                    <div class="thereply">
+                        <p>${messageText}</p>
+                        <div class="time">
+                            <p>${new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'})}</p>
+                            <img src="img/icons8-double-tick-96.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            `;
+            messageContainer.appendChild(senderMessage);
+            
+            // Limpa o campo de entrada de texto
+            messageInput.value = '';
+            
+            // Rola para o final do contêiner de mensagens
+            messageContainer.scrollTop = messageContainer.scrollHeight;
+        });
+
+        // Enviar mensagem com Enter
+        document.getElementById('messageInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                document.getElementById('sendMessage').click();
+            }
+        });
+    </script>
+</body>
+</html>
